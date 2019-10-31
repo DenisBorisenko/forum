@@ -14,13 +14,7 @@ class ReplyController extends Controller
     {
         return ReplyResource::collection( $question->replies);
     }
-
-    public function create()
-    {
-        //
-    }
-
-
+    
     public function store(Question $question,Request $request)
     {
         $reply = $question->replies()->create($request->all());
@@ -33,15 +27,10 @@ class ReplyController extends Controller
         return new ReplyResource($reply);
     }
 
-    public function edit(Reply $reply)
+    public function update(Question $question, Request $request, Reply $reply)
     {
-        //
-    }
-
-
-    public function update(Request $request, Reply $reply)
-    {
-        //
+        $reply->update($request->all());
+        return response('Updated',Response::HTTP_ACCEPTED);
     }
 
 public function destroy(Question $question, Reply $reply)
