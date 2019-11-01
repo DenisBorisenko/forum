@@ -1,8 +1,17 @@
 <template>
-<h1>Home</h1>
+    <div>
+        <toolbar/>
+        <app-footer/>
+    </div>
 </template>
 <script>
-    export default{
+    import toolbar from './Toolbar'
+    import AppFooter from './AppFooter'
 
+    export default{
+        components:{
+            toolbar,
+            AppFooter
+        }
     }
 </script>

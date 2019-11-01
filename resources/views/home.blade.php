@@ -10,11 +10,8 @@
 <body>
 <div id="app">
     <v-app>
-        <v-container>
-            <app-home/>
-        </v-container>
+        <app-home/>
     </v-app>
-
 </div>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
