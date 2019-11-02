@@ -7,16 +7,20 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import router from './Router/router'
 import User from './Helpers/user'
+import md from 'marked'
+import VueSimplemde from 'vue-simplemde'
+
 window.User = User
 window.EventBus = new Vue()
+window.md = md
 Vue.use(Vuetify)
 
-console.log(User.loggedIn())
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('AppHome', require('./components/AppHome').default);
+Vue.component('vue-simplemde', VueSimplemde)
 
 const app = new Vue({
     el: '#app',

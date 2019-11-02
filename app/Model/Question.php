@@ -9,8 +9,17 @@ class Question extends Model
 {
     protected $guarded = [];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($question){
+            $question->slug = str_slug($question->title);
+        });
+    }
+
     public function getPathAttribute(){
-        return asset("api/question/$this->slug");
+        return "/question/$this->slug";
     }
 
     public function getRouteKeyName()
