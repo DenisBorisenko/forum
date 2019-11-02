@@ -15,7 +15,7 @@
             <v-card-text v-html="body"></v-card-text>
         </v-container>
         <v-card-actions v-if="own">
-            <v-btn class="ma-2" small dark>Edit
+            <v-btn class="ma-2" small dark @click="edit">Edit
                 <v-icon dark right>mdi-pencil</v-icon>
             </v-btn>
             <v-btn class="ma-2" small dark @click="destroy">Delete
@@ -37,6 +37,9 @@
             }
         },
         methods:{
+            edit(){
+                EventBus.$emit('startEditing')
+            },
             destroy(){
               axios.delete(`/api/question/${this.data.slug}`)
                   .then(res => {this.$router.push('/forum')})

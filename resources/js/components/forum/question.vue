@@ -1,9 +1,5 @@
 <template>
     <v-card>
-<!--        class="mx-auto"-->
-<!--        max-width="400"-->
-<!--    >-->
-
         <v-card-title>
             <router-link :to="question.path">
                 {{question.title}}
