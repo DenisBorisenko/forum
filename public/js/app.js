@@ -2091,9 +2091,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['data'],
   data: function data() {
     return {
-      categories: [],
       form: {
         title: null,
         body: null
@@ -2101,7 +2101,23 @@ __webpack_require__.r(__webpack_exports__);
       errors: {}
     };
   },
-  methods: {}
+  created: function created() {
+    this.form = this.data;
+  },
+  methods: {
+    update: function update() {
+      var _this = this;
+
+      axios.patch("/api/question/".concat(this.form.slug), this.form).then(function (res) {
+        _this.cancel();
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    cancel: function cancel() {
+      EventBus.$emit('cancelEditing');
+    }
+  }
 });
 
 /***/ }),
@@ -2183,6 +2199,9 @@ __webpack_require__.r(__webpack_exports__);
 
       EventBus.$on('startEditing', function () {
         _this.editing = true;
+      });
+      EventBus.$on('cancelEditing', function () {
+        _this.editing = false;
       });
     },
     getQuestion: function getQuestion() {
@@ -58488,8 +58507,7 @@ var render = function() {
               "v-btn",
               {
                 staticClass: "ma-2",
-                attrs: { small: "", dark: "" },
-                on: { click: _vm.edit }
+                attrs: { small: "", dark: "", type: "submit" }
               },
               [
                 _vm._v("Edit\n                    "),
@@ -58505,7 +58523,7 @@ var render = function() {
               {
                 staticClass: "ma-2",
                 attrs: { small: "", dark: "" },
-                on: { click: _vm.destroy }
+                on: { click: _vm.cancel }
               },
               [
                 _vm._v("Cancel\n                    "),

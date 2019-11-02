@@ -30,6 +30,7 @@
         methods:{
             listen(){
                 EventBus.$on('startEditing',()=>{this.editing = true})
+                EventBus.$on('cancelEditing',()=>{this.editing = false})
             },
             getQuestion(){
                 axios.get(`/api/question/${this.$route.params.slug} `)

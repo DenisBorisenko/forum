@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['title','slug','body','user_id','category_id'];
 
     protected static function boot()
     {
