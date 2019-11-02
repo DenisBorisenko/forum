@@ -8,6 +8,7 @@ import Vuetify from 'vuetify'
 import router from './Router/router'
 import User from './Helpers/user'
 window.User = User
+window.EventBus = new Vue()
 Vue.use(Vuetify)
 
 console.log(User.loggedIn())

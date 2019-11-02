@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Login as LoginRequest;
 use App\Http\Requests\Signup as SignupRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -25,13 +26,19 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(LoginRequest $request)
     {
-        $credentials = request(['email', 'password']);
+//        $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if(!$token = auth()->attempt($request->only(['email','password']))){
+            return response()->json([
+                'errors'=>['none'=>['Sorry,but we cant find you with these details']],
+            ],401);
         }
+
+//        if (! $token = auth()->attempt($credentials)) {
+//            return response()->json(['error' => ['email'=>['Sorry,but we cant find you with these details']]], 401);
+//        }
 
         return $this->respondWithToken($token);
     }
