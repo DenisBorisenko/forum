@@ -14,7 +14,10 @@
                 required
             ></v-text-field>
 
-            <v-btn class="mr-4" type="submit">Login</v-btn>
+            <v-btn class="mr-4" type="submit" color="green">Login</v-btn>
+            <router-link to="/signup">
+                <v-btn class="mr-4" type="submit" color="blue">Signup</v-btn>
+            </router-link>
         </form>
     </v-container>
 </template>
@@ -31,6 +34,8 @@
         methods:{
             login(){
                User.login(this.form)
+                this.$router.push({name:'forum'})
+
             },
         }
     }
