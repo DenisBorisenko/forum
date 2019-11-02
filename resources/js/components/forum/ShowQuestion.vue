@@ -18,7 +18,7 @@
             <v-btn class="ma-2" small dark>Edit
                 <v-icon dark right>mdi-pencil</v-icon>
             </v-btn>
-            <v-btn class="ma-2" small dark>Delete
+            <v-btn class="ma-2" small dark @click="destroy">Delete
                 <v-icon dark right>mdi-delete</v-icon>
             </v-btn>
         </v-card-actions>
@@ -35,6 +35,13 @@
             body(){
                 return md.parse( this.data.body)
             }
+        },
+        methods:{
+            destroy(){
+              axios.delete(`/api/question/${this.data.slug}`)
+                  .then(res => {this.$router.push('/forum')})
+                  .catch(e => {console.log(e.response.data)})
+            },
         },
     }
 </script>
