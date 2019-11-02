@@ -6,6 +6,8 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import router from './Router/router'
+import User from './Helpers/user'
+window.User = User
 Vue.use(Vuetify)
 
 // const files = require.context('./', true, /\.vue$/i)

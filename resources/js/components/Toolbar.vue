@@ -3,12 +3,14 @@
         <v-toolbar dark>
             <v-toolbar-title>FORUM</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-toolbar-items>
+            <div>
                 <v-btn text>Forum</v-btn>
                 <v-btn text>Ask question</v-btn>
                 <v-btn text>Category</v-btn>
-                <v-btn text>Login</v-btn>
-            </v-toolbar-items>
+                <router-link to="/login">
+                    <v-btn text>Login</v-btn>
+                </router-link>
+            </div>
         </v-toolbar>
     </div>
 </template>
