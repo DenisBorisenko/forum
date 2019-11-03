@@ -1,10 +1,10 @@
 <template>
-    <v-container>
+    <div>
         <reply
-            v-for="reply in replies"
+            v-for="reply in content"
             :key="reply.id"
             :data="reply"/>
-    </v-container>
+    </div>
 </template>
 <script>
     import reply from './reply'
@@ -12,7 +12,18 @@
         components:{
             reply,
         },
-        props:['replies']
+        data(){return{
+            content: this.replies
+        }},
+        props:['replies'],
+        created(){
+            this.listen()
+        },
+        methods:{
+            listen(){
+                EventBus.$on('newReply',(reply) => {this.content.unshift(reply)})
+            }
+        }
 
     }
 </script>
