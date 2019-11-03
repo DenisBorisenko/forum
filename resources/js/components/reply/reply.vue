@@ -4,6 +4,8 @@
             <v-card-title>
                 <div class="headline">{{data.user}}</div>
                 <div class="ml-2">said {{data.created_at}}</div>
+                <v-spacer/>
+                <like :content="data" />
             </v-card-title>
             <v-divider/>
             <edit-reply
@@ -24,9 +26,11 @@
 </template>
 <script>
     import editReply from "./editReply.vue"
+    import like from "../likes/like"
     export default{
         components:{
             editReply,
+            like,
         },
         props:['data','index'],
         data(){return{
