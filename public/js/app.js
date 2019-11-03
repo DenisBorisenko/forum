@@ -2419,6 +2419,11 @@ __webpack_require__.r(__webpack_exports__);
       count: this.content.like_count
     };
   },
+  computed: {
+    color: function color() {
+      return this.liked ? 'red' : 'red lighten-4';
+    }
+  },
   methods: {
     likeIt: function likeIt() {
       if (User.loggedIn()) {
@@ -2427,10 +2432,18 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     incr: function incr() {
-      this.count++;
+      var _this = this;
+
+      axios.post("/api/like/".concat(this.content.id)).then(function (res) {
+        return _this.count++;
+      });
     },
     decr: function decr() {
-      this.count--;
+      var _this2 = this;
+
+      axios["delete"]("/api/like/".concat(this.content.id)).then(function (res) {
+        return _this2.count--;
+      });
     }
   }
 });
@@ -59342,7 +59355,7 @@ var render = function() {
         "v-btn",
         { attrs: { icon: "" }, on: { click: _vm.likeIt } },
         [
-          _c("v-icon", { attrs: { color: "red" } }, [
+          _c("v-icon", { attrs: { color: _vm.color } }, [
             _vm._v("mdi-cards-heart")
           ]),
           _vm._v(" "),
