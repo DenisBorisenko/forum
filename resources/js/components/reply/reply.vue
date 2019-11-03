@@ -6,8 +6,12 @@
                 <div class="ml-2">said {{data.created_at}}</div>
             </v-card-title>
             <v-divider/>
-            <v-card-text v-html="data.reply"/>
-            <v-card-actions  v-if="own">
+            <edit-reply
+                :reply="data"
+                v-if="editing"
+            />
+            <v-card-text v-else v-html="reply"/>
+            <v-card-actions  v-if="own && !editing">
                 <v-btn class="ma-2" small dark @click="edit">Edit
                     <v-icon dark right>mdi-pencil</v-icon>
                 </v-btn>
@@ -19,18 +23,34 @@
     </div>
 </template>
 <script>
+    import editReply from "./editReply.vue"
     export default{
+        components:{
+            editReply,
+        },
         props:['data','index'],
         data(){return{
             own : User.own(this.data.user_id),
+            editing:false,
         }},
+        created:{
+            this.listen()
+        },
         methods:{
+            listen(){
+                EventBus.$on('clearEditing'()=>{this.editing = false})
+            }
             edit(){
-
+                this.editing = true
             },
             destroy(){
                 EventBus.$emit('deleteReply',this.index)
             },
+        },
+        computed:{
+            reply(){
+                return md.parse(this.data.reply)
+            }
         },
     }
 </script>

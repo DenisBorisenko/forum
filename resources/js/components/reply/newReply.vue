@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="mt-5">
+        <h2 class="mb-2">Create a reply</h2>
             <vue-simplemde v-model="form.body"/>
             <div class="mt-5">
                 <v-btn class="ma-2" color="blue" @click="send">Send</v-btn>

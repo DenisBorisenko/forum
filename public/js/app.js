@@ -2582,6 +2582,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2664,44 +2665,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reply/reply.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['data', 'index'],
-  data: function data() {
-    return {
-      own: User.own(this.data.user_id)
-    };
-  },
-  methods: {
-    edit: function edit() {},
-    destroy: function destroy() {
-      EventBus.$emit('deleteReply', this.index);
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /var/www/forum/resources/js/components/reply/reply.vue: Unexpected keyword 'this' (37:8)\n\n\u001b[0m \u001b[90m 35 | \u001b[39m    }}\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 | \u001b[39m    created\u001b[33m:\u001b[39m{\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlisten()\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 | \u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 39 | \u001b[39m    methods\u001b[33m:\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 40 | \u001b[39m        listen(){\u001b[0m\n    at Parser.raise (/var/www/forum/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Parser.checkReservedWord (/var/www/forum/node_modules/@babel/parser/lib/index.js:9722:12)\n    at Parser.parseObjectProperty (/var/www/forum/node_modules/@babel/parser/lib/index.js:9446:12)\n    at Parser.parseObjPropValue (/var/www/forum/node_modules/@babel/parser/lib/index.js:9466:101)\n    at Parser.parseObjectMember (/var/www/forum/node_modules/@babel/parser/lib/index.js:9390:10)\n    at Parser.parseObj (/var/www/forum/node_modules/@babel/parser/lib/index.js:9314:25)\n    at Parser.parseExprAtom (/var/www/forum/node_modules/@babel/parser/lib/index.js:8939:28)\n    at Parser.parseExprSubscripts (/var/www/forum/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Parser.parseMaybeUnary (/var/www/forum/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Parser.parseExprOps (/var/www/forum/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Parser.parseMaybeConditional (/var/www/forum/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Parser.parseMaybeAssign (/var/www/forum/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Parser.parseObjectProperty (/var/www/forum/node_modules/@babel/parser/lib/index.js:9441:101)\n    at Parser.parseObjPropValue (/var/www/forum/node_modules/@babel/parser/lib/index.js:9466:101)\n    at Parser.parseObjectMember (/var/www/forum/node_modules/@babel/parser/lib/index.js:9390:10)\n    at Parser.parseObj (/var/www/forum/node_modules/@babel/parser/lib/index.js:9314:25)\n    at Parser.parseExprAtom (/var/www/forum/node_modules/@babel/parser/lib/index.js:8939:28)\n    at Parser.parseExprSubscripts (/var/www/forum/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Parser.parseMaybeUnary (/var/www/forum/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Parser.parseExprOps (/var/www/forum/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Parser.parseMaybeConditional (/var/www/forum/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Parser.parseMaybeAssign (/var/www/forum/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Parser.parseExportDefaultExpression (/var/www/forum/node_modules/@babel/parser/lib/index.js:11187:24)\n    at Parser.parseExport (/var/www/forum/node_modules/@babel/parser/lib/index.js:11088:31)\n    at Parser.parseStatementContent (/var/www/forum/node_modules/@babel/parser/lib/index.js:10113:27)\n    at Parser.parseStatement (/var/www/forum/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Parser.parseBlockOrModuleBlockBody (/var/www/forum/node_modules/@babel/parser/lib/index.js:10585:25)\n    at Parser.parseBlockBody (/var/www/forum/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Parser.parseTopLevel (/var/www/forum/node_modules/@babel/parser/lib/index.js:9940:10)\n    at Parser.parse (/var/www/forum/node_modules/@babel/parser/lib/index.js:11447:17)\n    at parse (/var/www/forum/node_modules/@babel/parser/lib/index.js:11483:38)\n    at parser (/var/www/forum/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/var/www/forum/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/var/www/forum/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/var/www/forum/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/var/www/forum/node_modules/@babel/core/lib/transform.js:34:34)");
 
 /***/ }),
 
@@ -59482,7 +59448,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "mt-5" },
     [
+      _c("h2", { staticClass: "mb-2" }, [_vm._v("Create a reply")]),
+      _vm._v(" "),
       _c("vue-simplemde", {
         model: {
           value: _vm.form.body,
@@ -59587,11 +59556,11 @@ var render = function() {
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
-          _c("v-card-text", {
-            domProps: { innerHTML: _vm._s(_vm.data.reply) }
-          }),
+          _vm.editing
+            ? _c("edit-reply", { attrs: { reply: _vm.data } })
+            : _c("v-card-text", { domProps: { innerHTML: _vm._s(_vm.reply) } }),
           _vm._v(" "),
-          _vm.own
+          _vm.own && !_vm.editing
             ? _c(
                 "v-card-actions",
                 [
