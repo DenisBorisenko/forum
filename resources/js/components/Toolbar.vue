@@ -23,7 +23,7 @@
                     {title: 'Forum', to: '/forum', show:true },
                     {title:'Login', to: '/login', show: !User.loggedIn() },
                     {title:'Ask question', to: '/ask', show: User.loggedIn()},
-                    {title:'Category', to: '/category', show: User.loggedIn()},
+                    {title:'Category', to: '/category', show: User.admin()},
                     {title:'Logout', to: '/logout', show: User.loggedIn() },
 
                 ],

@@ -9,15 +9,18 @@
             :data="question"
             v-if="!editing"
         />
+        <replies :replies="question.replies"></replies>
     </div>
 </template>
 <script>
     import ShowQuestion from "./ShowQuestion";
     import editQuestion from "./editQuestion";
+    import replies from "../reply/replies"
     export default{
         components:{
           ShowQuestion,
-          editQuestion
+          editQuestion,
+          replies
         },
         data(){return{
             question:null,

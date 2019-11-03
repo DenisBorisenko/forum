@@ -85,6 +85,9 @@
             }
         },
         created(){
+            if(!User.admin()){
+                this.$router.push('/forum')
+            }
             axios.get('/api/category')
                 .then(({data:{data}}) => {this.categories = data})
         }
