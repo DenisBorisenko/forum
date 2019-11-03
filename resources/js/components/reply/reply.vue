@@ -33,13 +33,13 @@
             own : User.own(this.data.user_id),
             editing:false,
         }},
-        created:{
+        created(){
             this.listen()
         },
         methods:{
             listen(){
-                EventBus.$on('clearEditing'()=>{this.editing = false})
-            }
+                EventBus.$on('cancelEditing',()=>{this.editing = false})
+            },
             edit(){
                 this.editing = true
             },

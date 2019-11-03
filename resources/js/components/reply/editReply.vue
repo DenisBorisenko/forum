@@ -2,7 +2,7 @@
     <div>
         <vue-simplemde v-model="reply.reply"/>
 
-        <v-btn class="ma-2" small dark type="edit">Edit
+        <v-btn class="ma-2" small dark @click="edit">Edit
             <v-icon dark right>mdi-check</v-icon>
         </v-btn>
         <v-btn class="ma-2" small dark @click="cancel">Cancel
@@ -14,8 +14,8 @@
 export default{
     props:['reply'],
     methods:{
-        update(){
-            axios.patch(`/api/question/${this.form.slug}`,this.form)
+        edit(){
+            axios.patch(`/api/question/${this.$route.params.slug}/reply/${this.reply.id}`,{body : this.reply.reply})
                 .then(res => {this.cancel()})
                 .catch(e => {console.log(e)})
         },
