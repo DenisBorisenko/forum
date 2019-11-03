@@ -2626,6 +2626,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2646,6 +2647,11 @@ __webpack_require__.r(__webpack_exports__);
 
       EventBus.$on('newReply', function (reply) {
         _this.content.unshift(reply);
+      });
+      EventBus.$on('deleteReply', function (index) {
+        axios["delete"]("/api/question/".concat(_this.$route.params.slug, "/reply/").concat(_this.content[index].id)).then(function (res) {
+          _this.content.splice(index, 1);
+        });
       });
     }
   }
@@ -2683,7 +2689,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['data'],
+  props: ['data', 'index'],
   data: function data() {
     return {
       own: User.own(this.data.user_id)
@@ -2691,7 +2697,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     edit: function edit() {},
-    destroy: function destroy() {}
+    destroy: function destroy() {
+      EventBus.$emit('deleteReply', this.index);
+    }
   }
 });
 
@@ -59529,8 +59537,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.content, function(reply) {
-      return _c("reply", { key: reply.id, attrs: { data: reply } })
+    _vm._l(_vm.content, function(reply, index) {
+      return _c("reply", {
+        key: reply.id,
+        attrs: { index: index, data: reply }
+      })
     }),
     1
   )

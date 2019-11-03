@@ -20,7 +20,7 @@
 </template>
 <script>
     export default{
-        props:['data'],
+        props:['data','index'],
         data(){return{
             own : User.own(this.data.user_id),
         }},
@@ -28,7 +28,9 @@
             edit(){
 
             },
-            destroy(){},
+            destroy(){
+                EventBus.$emit('deleteReply',this.index)
+            },
         },
     }
 </script>
