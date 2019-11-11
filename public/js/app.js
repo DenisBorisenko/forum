@@ -1716,7 +1716,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      items: [{
+        icon: 'mdi-vk',
+        src: 'https://vk.com/goodden1'
+      }, {
+        icon: 'mdi-github-circle',
+        src: 'https://github.com/DenisBorisenko'
+      }, {
+        icon: 'mdi-instagram',
+        src: 'https://www.instagram.com/9niskas/'
+      }]
+    };
+  }
+});
 
 /***/ }),
 
@@ -1761,6 +1800,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -58645,12 +58686,57 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-footer",
-    { attrs: { absolute: "", dark: "" } },
+    { attrs: { dark: "", padless: "" } },
     [
-      _vm._v("\n    FORUM\n    "),
-      _c("v-spacer"),
-      _vm._v(" "),
-      _c("div", [_vm._v("© " + _vm._s(new Date().getFullYear()))])
+      _c(
+        "v-card",
+        { staticClass: "flex", attrs: { flat: "", tile: "" } },
+        [
+          _c(
+            "v-card-title",
+            [
+              _c("strong", { staticClass: "subheading" }, [
+                _vm._v("Powered by Denis Borisenko")
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v(_vm._s(new Date().getFullYear()) + " — "),
+                _c("strong", [_vm._v("Forum")])
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _vm._l(_vm.items, function(item) {
+                return _c(
+                  "v-btn",
+                  {
+                    key: item.icon,
+                    staticClass: "mx-4",
+                    attrs: { dark: "", icon: "" }
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: item.src } },
+                      [
+                        _c("v-icon", { attrs: { size: "24px" } }, [
+                          _vm._v(_vm._s(item.icon))
+                        ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              })
+            ],
+            2
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -58736,16 +58822,16 @@ var render = function() {
                     { staticClass: "mt-5" },
                     [
                       _c(
-                        "v-btn",
-                        { attrs: { dark: "" } },
+                        "router-link",
+                        { attrs: { to: "/ask" } },
                         [
-                          _vm._v(
-                            "Ask question\n                                "
-                          ),
                           _c(
-                            "router-link",
-                            { attrs: { to: "/create" } },
+                            "v-btn",
+                            { attrs: { dark: "" } },
                             [
+                              _vm._v(
+                                "Ask question\n                                    "
+                              ),
                               _c("v-icon", { attrs: { right: "" } }, [
                                 _vm._v("mdi-comment-question-outline")
                               ])
@@ -58757,16 +58843,16 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "v-btn",
-                        { attrs: { dark: "" } },
+                        "router-link",
+                        { attrs: { to: "/forum" } },
                         [
-                          _vm._v(
-                            "List of questions\n                             "
-                          ),
                           _c(
-                            "router-link",
-                            { attrs: { to: "/forum" } },
+                            "v-btn",
+                            { attrs: { dark: "" } },
                             [
+                              _vm._v(
+                                "List of questions\n                                "
+                              ),
                               _c("v-icon", { attrs: { right: "" } }, [
                                 _vm._v("mdi-filter-variant")
                               ])

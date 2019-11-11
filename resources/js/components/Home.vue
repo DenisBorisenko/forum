@@ -7,16 +7,18 @@
                         <h1>Forum</h1>
                         <span>Here you can create ask and answer questions.</span>
                         <div class="mt-5">
+                            <router-link to="/ask">
                             <v-btn dark>Ask question
-                                <router-link to="/create">
                                     <v-icon  right>mdi-comment-question-outline</v-icon>
-                                </router-link>
-                        </v-btn>
-                         <v-btn dark>List of questions
+                                 </v-btn>
+                        </router-link>
                              <router-link to="/forum">
+
+                         <v-btn dark>List of questions
                                 <v-icon right>mdi-filter-variant</v-icon>
-                             </router-link>
                         </v-btn>
+                             </router-link>
+
                         </div>
                     </div>
               </v-col>
