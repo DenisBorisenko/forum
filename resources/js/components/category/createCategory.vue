@@ -72,7 +72,9 @@
                 axios.post('/api/category/',this.form)
                     .then((res)=> {
                         this.categories.unshift(res.data)
+                        this.form.name = ''
                     })
+
             },
             destroy(slug,index){
                 this.categories.splice(index,1)

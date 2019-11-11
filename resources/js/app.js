@@ -7,10 +7,12 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import router from './Router/router'
 import User from './Helpers/user'
+import Exceptions from './Helpers/Exceptions'
 import md from 'marked'
 import VueSimplemde from 'vue-simplemde'
 
 window.User = User
+window.Exceptions = Exceptions
 window.EventBus = new Vue()
 window.md = md
 Vue.use(Vuetify)

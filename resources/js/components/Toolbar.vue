@@ -1,7 +1,13 @@
 <template>
     <div>
         <v-toolbar dark>
-            <v-toolbar-title>FORUM</v-toolbar-title>
+            
+            <v-toolbar-title>
+                <router-link to="/">
+                    FORUM
+                </router-link>
+            </v-toolbar-title>
+        
             <v-spacer></v-spacer>
             <div>
                 <router-link

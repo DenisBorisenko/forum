@@ -1,5 +1,5 @@
 <template>
-    <v-footer>
+    <v-footer absolute dark>
         FORUM
         <v-spacer></v-spacer>
         <div>&copy; {{ new Date().getFullYear() }}</div>
@@ -10,3 +10,5 @@
 
     }
 </script>
+
+
